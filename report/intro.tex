@@ -1,0 +1,14 @@
+\section{Introduction}
+\label{section:introduction}
+
+VPNs are common nowadays, but the Service Provider CGNs are 
+not all the time playing nicely with the traffic. For example,
+we have observed that TCP connections can enter so called 
+{\it stale} state: ACKs do not go through in both directions,
+but only one. In this case, the connection remains in 
+ESTABLISHED state, but the data does not go through.
+
+To ensure that this is the case, we have collected 12 hours of TCP 
+traces and plotted the progress of the sequence numbers in both 
+directions.
+

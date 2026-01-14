@@ -1,0 +1,30 @@
+\section{Data processing and basic results}
+\label{section:results}
+
+%\begin{figure*}[ht!]
+%\centering
+%\includegraphics[width=0.8\textwidth]{graphics/sequence_progress.pdf}
+%\caption{TCP sequence progress in both directions}
+%\label{fig:tcp}
+%\end{figure*}
+
+To process the PCAP file we have converted the data into
+JSON format using Wireshark application, and later parsed 
+the file using custom Python script. We then extracted 
+the sequence numbers, length of the TCP payload, 
+source and destination ports. 
+
+The result of the sequence progress is shown in Figure~\ref{fig:tcp}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{graphics/sequence_progress.pdf}
+\caption{TCP sequence progress in both directions}
+\label{fig:tcp}
+\end{figure}
+
+Clearly, drop of the spikes indicate TCP connection restarts. But one thing
+is really interesting, the last TCP connection restarts successfully, but the sequences
+are progressing only for one direction: from client to server. The data does not go 
+through the CGN from server to client and the TCP connection hangs. 
+
